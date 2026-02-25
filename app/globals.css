@@ -1,26 +1,64 @@
 @import "tailwindcss";
 
 :root {
+  /* ── Primary ──────────────────────────────────────────────── */
+  --color-primary: #144D29;
+  --color-primary-hover: #166534;
+  --color-primary-tint: #F0FDF4;
+  --color-primary-light: #DCFCE7;
+
+  /* ── Accent ───────────────────────────────────────────────── */
+  --color-accent-gold: #FACC15;
+  --color-accent-blue: #38BDF8;
+
+  /* ── Neutral ──────────────────────────────────────────────── */
+  --color-bg-primary: #F1F5F9;
+  --color-bg-secondary: #F8FAFC;
+  --color-bg-admin: #F3F4F6;  
+  --color-text-primary: #1E293B;
+  --color-text-secondary: #4B5563;
+  --color-text-muted: #64748B;
+  --color-border: #E5E7EB;
+
+  /* ── Feedback ─────────────────────────────────────────────── */
+  --color-error: #EF4444;
+  --color-error-tint: #FEF2F2;
+
+  /* ── Backgrounds ──────────────────────────────────────────── */
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #1E293B;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --font-sans: var(--font-nunito), var(--font-open-sans), system-ui, sans-serif;
+  --font-heading: var(--font-nunito), system-ui, sans-serif;
+  --font-body: var(--font-open-sans), system-ui, sans-serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body), system-ui, sans-serif;
+}
+
+/* ── Heading font override ──────────────────────────────────── */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading), system-ui, sans-serif;
+}
+
+/* ── Focus ring utility ─────────────────────────────────────── */
+.focus-ring {
+  outline: none;
+}
+
+.focus-ring:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
